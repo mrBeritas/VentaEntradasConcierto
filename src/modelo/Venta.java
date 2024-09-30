@@ -49,6 +49,17 @@ public class Venta {
         }
         return false;
     }
+
+    public boolean realizarVenta(Persona persona) {
+        if (persona != null && persona.tarjeta != null) { 
+            
+            System.out.println("Venta realizada a: " + persona.nombre + " " + persona.apellidos);
+            return true;
+        } else {
+            System.out.println("Venta no realizada: La persona no tiene una tarjeta registrada");
+            return false;
+        }
+    }
     
     public boolean anularVenta() {
         if (!entradas.isEmpty()) {
