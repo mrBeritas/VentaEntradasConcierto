@@ -44,6 +44,7 @@ public class Zona {
         return this.entradas;
     }
     
-    
-    
+    public String getNombre() {
+        return nombre;
+    }
 }
