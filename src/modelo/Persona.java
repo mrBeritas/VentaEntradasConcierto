@@ -49,5 +49,9 @@ public class Persona {
         this.tarjeta = null;
         return result;
     }
+
+    public String getDni() {
+        return dni;
+    }
     
 }
