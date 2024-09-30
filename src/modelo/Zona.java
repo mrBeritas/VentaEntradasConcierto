@@ -47,4 +47,9 @@ public class Zona {
     public String getNombre() {
         return nombre;
     }
+    
+    public int estimarPrecioporZona(){
+    
+        return this.precio;
+    }
 }

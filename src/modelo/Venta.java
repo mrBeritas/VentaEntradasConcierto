@@ -5,10 +5,53 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author OCA-UIE
  */
 public class Venta {
     
+    private Date fecha;
+    private int monto;
+    private ArrayList<Entrada> entradas;
+
+    public Venta(Date fecha) {
+        this.fecha = fecha;
+        this.monto = 0;
+        this.entradas = new ArrayList<>();
+    }
+    
+    public boolean agregarEntrada(Entrada entrada) {
+        if (entrada != null) {
+            this.entradas.add(entrada);
+            this.monto = this.monto + entrada.EstimarPrecioEntrada();  
+            return true;
+        }
+        return false;
+    } 
+    
+    public boolean eliminarEntrada(Entrada entrada) {
+        if (this.entradas.contains(entrada)) {
+            this.entradas.remove(entrada);
+            this.monto = this.monto -  entrada.EstimarPrecioEntrada();
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean anularVenta() {
+        if (!entradas.isEmpty()) {
+            entradas.clear();
+            this.monto = 0;
+            return true;
+        }
+        return false;
+    }
+    
+    public int MostrarMonto() {
+        return this.monto;
+    }
 }

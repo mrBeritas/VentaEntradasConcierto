@@ -12,6 +12,7 @@ package modelo;
 public class Entrada {
     private int numero;
     private String estado;
+    private Zona zona;
 
     public Entrada(int numero) {
         this.numero = numero;
@@ -48,5 +49,8 @@ public class Entrada {
         return result;
     }    
     
+    public int EstimarPrecioEntrada(){
+        return this.zona.estimarPrecioporZona();
+    }
     
 }
