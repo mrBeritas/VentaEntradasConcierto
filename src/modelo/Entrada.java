@@ -52,5 +52,10 @@ public class Entrada {
     public int EstimarPrecioEntrada(){
         return this.zona.estimarPrecioporZona();
     }
+
+    @Override
+    public String toString() {
+        return "Entrada{" + "numero=" + numero + ", estado=" + estado + ", zona=" + zona + '}';
+    }
     
 }

@@ -15,20 +15,28 @@ import java.util.Date;
 public class Venta {
     
     private Date fecha;
+    private static int codigoRegistro = 0;
     private int monto;
     private ArrayList<Entrada> entradas;
 
     public Venta(Date fecha) {
+        this.codigoRegistro = ++codigoRegistro;
         this.fecha = fecha;
         this.monto = 0;
         this.entradas = new ArrayList<>();
+        
     }
     
     public boolean agregarEntrada(Entrada entrada) {
         if (entrada != null) {
+            if(entradas.size() < 4){
+            
             this.entradas.add(entrada);
             this.monto = this.monto + entrada.EstimarPrecioEntrada();  
             return true;
+            
+            }
+            
         }
         return false;
     } 
@@ -54,4 +62,17 @@ public class Venta {
     public int MostrarMonto() {
         return this.monto;
     }
+
+    @Override
+    public String toString() {
+        return "Venta{" + "fecha=" + fecha + ", monto=" + monto + ", entradas=" + entradas + '}';
+    }
+
+    public static int getCodigoRegistro() {
+        return codigoRegistro;
+    }
+    
+   
+    
+    
 }
