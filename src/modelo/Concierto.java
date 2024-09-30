@@ -46,4 +46,9 @@ public class Concierto {
         }
         return false;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
 }

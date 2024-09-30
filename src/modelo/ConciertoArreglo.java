@@ -9,7 +9,6 @@ package modelo;
  *
  * @author OCA-UIE
  */
-package modelo;
 
 public class ConciertoArreglo {
 
@@ -53,6 +52,8 @@ public class ConciertoArreglo {
             if (conciertos[i].getNombre().equalsIgnoreCase(nombre)) {
                 return conciertos[i];
         }
+        
+    }
         return null;
     }
 
@@ -62,5 +63,6 @@ public class ConciertoArreglo {
 
     public int capacidadMaxima() {
         return conciertos.length;
+    }
 }
 
