@@ -54,4 +54,11 @@ public class Venta {
     public int MostrarMonto() {
         return this.monto;
     }
+
+    @Override
+    public String toString() {
+        return "Venta{" + "fecha=" + fecha + ", monto=" + monto + ", entradas=" + entradas + '}';
+    }
+    
+    
 }
